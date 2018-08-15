@@ -31,29 +31,68 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method below
-
-		for (int i = 0; i < 4; i++) {
+		//ok
 			
 			// 4. Ask the user who this person is and store their answer
-			String guess= JOptionPane.showInputDialog("who is this?");
-			
+			String guess= JOptionPane.showInputDialog("what is this dude's first name?");
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
+			if (guess.equalsIgnoreCase("arnold")) {
+				JOptionPane.showMessageDialog(null, "you're right");
+				score++;
+			} else {
 			// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
-
+				window.setSize(500, 500);
+				JOptionPane.showMessageDialog(null, "you're wrong");
+			}
 			// 7. Use the showNextImage() method below to get the next image
+			window.setSize(125, 125);
 			showNextImage();
 		    // 8. Show them their current score
-			
+			JOptionPane.showMessageDialog(null, "score: " + score);
 			// 9. .... repeat for all your images.....
-
-
-		}
-
+			
+			//2
+			String guess2= JOptionPane.showInputDialog("what is this dude's first name?");
+			if (guess2.equalsIgnoreCase("leonardo")) {
+				JOptionPane.showMessageDialog(null, "you're right");
+				score++;
+			} else {
+				window.setSize(500, 500);
+				JOptionPane.showMessageDialog(null, "you're wrong");
+			}
+			window.setSize(125, 125);
+			showNextImage();
+			JOptionPane.showMessageDialog(null, "score: " + score);
+			
+			//3
+			String guess3= JOptionPane.showInputDialog("what is this dude's first name?");
+			if (guess3.equalsIgnoreCase("morgan")) {
+				JOptionPane.showMessageDialog(null, "you're right");
+				score++;
+			} else {
+				window.setSize(500, 500);
+				JOptionPane.showMessageDialog(null, "you're wrong");
+			}
+			window.setSize(125, 125);
+			showNextImage();
+			JOptionPane.showMessageDialog(null, "score: " + score);
+			
+			//4
+			String guess4= JOptionPane.showInputDialog("what is this dude's first name?");
+			if (guess4.equalsIgnoreCase("jack")) {
+				JOptionPane.showMessageDialog(null, "you're right");
+				score++;
+			} else {
+				window.setSize(500, 500);
+				JOptionPane.showMessageDialog(null, "you're wrong");
+			}
+			window.setSize(125, 125);
+			JOptionPane.showMessageDialog(null, "good job. your score is " + score);
+			showNextImage();
 	}
 
 	public void showNextImage() {
@@ -75,7 +114,7 @@ public class BodyPartQuiz {
 		window.add(panel);
 		
 		// 3. Change the size of the window so that you can only see part of the image.		
-		window.setSize(500,500);
+		window.setSize(125,125);
 		
 		showNextImage();
 		
