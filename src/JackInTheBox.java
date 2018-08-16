@@ -11,28 +11,35 @@ import javax.swing.JLabel;
 
 public class JackInTheBox implements ActionListener {
 	
-	Dimension smol = new Dimension(25,75);
+	Dimension small = new Dimension(25,75);
+	int count = 0;
+	JButton button = new JButton();
 	
 	public static void main(String[] args) {
 		JackInTheBox yay = new JackInTheBox();
-		yay.showButton();
+		yay.doWhatever();
 	}
 	
-	public void showButton() {
+	public void doWhatever() {
 		JFrame frame = new JFrame();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JButton button = new JButton();
 		frame.add(button);
 		button.addActionListener(this);
-		button.setPreferredSize(smol);
+		button.setPreferredSize(small);
 		button.setText("Surprise");
 		frame.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		JButton isClicked = (JButton) e.getSource();
+		if(isClicked == button) {
+			count++;
+		if (count == 5) {
 		showPicture("jackInTheBox.png");
+		}
+		}
 	}
 	
 	private void showPicture(String fileName) { 
